@@ -2,60 +2,32 @@
 
 <html lang="en">
     <script>
-       var a = 0;
-       var count = 0;
+      var count = false;
+
       function mouseOver(){
-        var x = Math.floor(Math.random() * 10) + 1;
-          if (count == 0) {
+          if (count == false) {
             var myImage = document.querySelector('#anh1');
             myImage.removeAttribute("hidden");
             var myImage = document.querySelector('#anh2');
             myImage.removeAttribute("hidden");
-            count = 1;
+            count = true;
           }
-          if (a == 0) {
-            if (x % 2 == 0) buttonMoveDown();
-            else buttonMoveRight();
+          
+          $('#btn-2').animate({
+            'top' : Math.random() * window.innerHeight + "px",
+            'left': Math.random() * window.innerWidth + "px"
+          }, "medium");
 
-          }
-          else {
-            if (x % 2 == 0) buttonMoveDown();
-            buttonMoveLeft();
-          }
-          return false;
-          }
-
-      function buttonMoveLeft(){
-
-          const button = document.getElementById('btn-2');
-          button.style.transform = 'translateX(0%)';
-          a = 0;
-
-      };
-
-
-      function buttonMoveRight(){
-
-          const button = document.getElementById('btn-2');
-          button.style.transform = 'translateX(160%)';
-          a = 1;
-
-      };
-      function buttonMoveDown(){
-
-        const button = document.getElementById('btn-2');
-        button.style.transform = 'translateY(200%)';
-        a = 1;
-
-        };
+        }
 
 
     </script>
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <meta name="viewport" content="initial-scale=1, width=device-width">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <link href="/static/styles.css" rel="stylesheet">
+        <link href="../static/styles.css" rel="stylesheet">
         <title>ICM - Team 1</title>
     </head>
     <body>
@@ -70,7 +42,7 @@
         <br>
         <div>
             <button class="btn-1" id="btn-1"> Có</button>
-          <p class="btn-1" id="btn-2" onclick="mouseOver()" onmouseover="mouseOver()"> Không</p->
+            <p class="btn-1" id="btn-2" onclick="mouseOver()" onmouseover="mouseOver()"> Không</p>
         </div>
       </form>
       <div>
